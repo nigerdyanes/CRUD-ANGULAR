@@ -1,0 +1,18 @@
+<div class="container card-form">
+  <div class="card text-center">
+    <div class="card-header">
+      <h4>CREATE ITEM</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="saveItem($event)">
+        <input type="text" formControlName="name" class="form-control" placeholder="Enter item name" /><br>
+        <input type="text" formControlName="department" class="form-control" placeholder="Enter item department" /><br>
+        <input type="text" formControlName="responsable" class="form-control" placeholder="Enter item responsable" /><br>
+        <input type="number" formControlName="years" class="form-control" placeholder="Enter item years" /><br>
+        <input type="text" formControlName="zone" class="form-control" placeholder="Enter item zone" /><br>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-success">Guardar Item</button>
+      </form>
+    </div>
+    <div class="card-footer text-muted"></div>
+  </div>
+</div>
