@@ -1,0 +1,32 @@
+<div class="container text-center mt-5">
+  <h3>LIST ITEM</h3>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Responsable</th>
+        <th scope="col">Years</th>
+        <th scope="col">Zone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="items.length === 0">
+        <td colspan="6">No hay items</td>
+      </tr>
+      <tr *ngFor="let item of items; index as i">
+        <th scope="col">{{ item.name }}</th>
+        <th scope="col">{{ item.department }}</th>
+        <th scope="col">{{ item.responsable }}</th>
+        <th scope="col">{{ item.years }}</th>
+        <th scope="col">{{ item.zone }}</th>
+        <th scope="col">
+          <a [routerLink]="['/items/edit', i]"><i class="bi bi-pencil-square"></i>Editar</a>&nbsp;&nbsp;
+          <i class="bi bi-x-lg"></i>Eliminar
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -6,12 +6,24 @@ import { Item } from '../models/item.model';
   providedIn: 'root',
 })
 export class ItemsService {
-  items: Item[] =[];
+  items: Item[] = [
+    {
+      name:'test',
+      department:'test',
+      responsable:'test',
+      years:1,
+      zone:'test'
+    }
+  ];
 
   constructor() {}
 
   getAll(){
     return this.items;
+  }
+
+  getItem(index:number){
+    return this.items[index];
   }
 
   createItem(newItem:Item){
